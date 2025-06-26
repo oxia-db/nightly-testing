@@ -30,8 +30,8 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          # images: ${{ github.repository }}
-          images: oxia/oxia
+#           images: ${{ github.repository }}
+          images: mattison/oxia-nightly
           tags: |
             type=ref,event=branch
             type=semver,pattern={{version}}
