@@ -19,6 +19,6 @@ WORKDIR /oxia-nightly
 COPY --from=build /src/oxia-nightly/bin/night /oxia-nightly/bin/night
 ENV PATH=$PATH:/oxia-nightly/bin
 
-RUN oxia completion bash > ~/.bashrc
+RUN night completion bash > ~/.bashrc
 
 CMD [ "/bin/bash" ]
