@@ -22,15 +22,8 @@ var (
 
 func init() {
 	rootCmd.AddCommand(correctness.Cmd)
-	rootCmd.PersistentFlags().StringVarP(&common.ExecutorOptions.Address, "address", "a", "", "oxia server address")
-	rootCmd.PersistentFlags().StringVarP(&common.ExecutorOptions.Namespace, "namespace", "n", "", "oxia executor namespace")
-	if err := rootCmd.MarkPersistentFlagRequired("address"); err != nil {
-		panic(err)
-	}
-	if err := rootCmd.MarkPersistentFlagRequired("namespace"); err != nil {
-		panic(err)
-	}
-
+	rootCmd.PersistentFlags().StringVarP(&common.ExecutorOptions.Address, "address", "a", "127.0.0.1:6648", "oxia server address")
+	rootCmd.PersistentFlags().StringVarP(&common.ExecutorOptions.Namespace, "namespace", "n", "default", "oxia executor namespace")
 }
 
 func main() {
