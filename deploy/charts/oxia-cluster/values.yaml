@@ -1,0 +1,32 @@
+
+namespaces:
+  - name: default
+    initialShardCount: 32
+    replicationFactor: 3
+
+
+coordinator:
+  cpu: 1
+  memory: 2Gi
+  ports:
+    internal: 6649
+    metrics: 8080
+
+server:
+  replicas: 3
+  cpu: 1
+  memory: 1Gi
+  storage: 4Gi
+  #storageClassName: xxx
+  ports:
+    public: 6648
+    internal: 6649
+    metrics: 8080
+
+image:
+  repository: oxia/oxia
+  tag: mattison_nightly
+  pullPolicy: Always
+
+pprofEnabled: true
+monitoringEnabled: true
